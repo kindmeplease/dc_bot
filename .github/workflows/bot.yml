@@ -1,28 +1,32 @@
-name: Python Application
+name: Run Discord Bot
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main  # 當推送到main分支時觸發
   pull_request:
-    branches: [ main ]
+    branches:
+      - main  # 當有拉取請求時觸發
 
 jobs:
-  build:
+  run-bot:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'  # 您可以根據需要更改版本
-        
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-        
-    - name: Run script
-      run: |
-        python your_script.py  # 替換為您的Python檔案名稱
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'  # 根據需要選擇Python版本
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  # 安裝依賴項
+
+      - name: Run bot
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}  # 使用Secrets中的Token
+        run: |
+          python FRCCbot.py  # 運行您的bot.py腳本
