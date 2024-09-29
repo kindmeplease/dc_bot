@@ -11,8 +11,7 @@ files = os.listdir(current_directory)
 print("Files and directories:", files)
 
 # 獲取環境變量
-TOKEN = os.environ.get('DSICORD_TOKEN')
-print("Home Directory:", home_directory)
+TOKEN = os.environ.get('DSISCORD_TOKEN')
 
 intents = discord.Intents.default()
 intents.message_content = True
