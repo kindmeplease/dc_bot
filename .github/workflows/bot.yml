@@ -29,4 +29,4 @@ jobs:
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}  # 使用Secrets中的Token
         run: |
-          python FRCCbot.py  # 運行您的bot.py腳本
+          python frccbot.py  # 運行您的bot.py腳本
