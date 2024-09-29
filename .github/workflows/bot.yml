@@ -4,9 +4,7 @@ on:
   push:
     branches:
       - main  # 當推送到main分支時觸發
-  pull_request:
-    branches:
-      - main  # 當有拉取請求時觸發
+  workflow_dispatch:  # 允許手動觸發工作流
 
 jobs:
   run-bot:
