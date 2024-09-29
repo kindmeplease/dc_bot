@@ -63,4 +63,4 @@ async def hello(ctx):
     await ctx.send('Hello!')
 
 # 用您的令牌啟動機器人
-bot.run('MTI4OTU4OTkzMDAyMDA0NDg2MQ.G4FFxp.IRylttzRUKwZFW0o-aYC7ckkkoRs80yQO6Giic')
+bot.run()
